@@ -1,0 +1,174 @@
+*{
+  font-family: "Luckiest guy";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(230, 224, 215);
+  color: rgb(98, 205, 201);
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem; 
+}
+
+h1:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.tac{
+color: darkorange;
+}
+
+.board {
+  top: rem;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  border-radius: 20%;
+  background-color: #000000;
+}
+
+.tile {
+  color: aqua;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x {
+  background: linear-gradient(1deg, black, aqua, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+.o {
+  background: linear-gradient(1deg, red, darkorange, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.right-border {
+  border-right: 1px solid  #FFFFFF;
+  
+  
+  
+}
+
+.bottom-border {
+  border-bottom: 1px solid #FFFFFF;
+}
+
+
+
+.x-hover:hover::after {
+  color: aqua;
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  color: orange;
+  content: "O";
+  opacity: 0.4;
+}
+
+.strike {
+  position: absolute;
+  background-color: darkgray;
+  border-radius: 40%;
+}
+
+.strike-row-1 {
+  width: 94%;
+  height: 7px;
+  top: 15%;
+  left: 3%;
+}
+.strike-row-2 {
+  width: 94%;
+  height: 7px;
+  top: 48%;
+  left: 3%;
+}
+.strike-row-3 {
+  width: 94%;
+  height: 7px;
+  top: 83%;
+  left: 3%
+}
+.strike-column-1 {
+  top: 3%;
+  height: 94%;
+  width: 7px;
+  left: 15%;
+}
+.strike-column-2 {
+  top: 3%;
+  height: 94%;
+  width: 7px;
+  left: 49%;
+}
+.strike-column-3 {
+  top: 3%;
+  height: 90%;
+  width: 7px;
+  left: 82%;
+}
+.strike-diagonal-1 {
+  width: 80%;
+  height: 7px;
+  top: 50%;
+  left: 11%;
+  transform: skewY(45deg);
+}
+.strike-diagonal-2 {
+  width: 80%;
+  height: 7px;
+  top: 50%;
+  left: 8%;
+  transform: skewY(-45deg);
+}
+
+.game-over {
+  
+  text-align: center;
+  border: darkorange 8px;
+  border-style: ridge;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 1.5em;
+  border-radius: 15%;
+  margin-top: 2rem;
+}
+
+.reset-button {
+  margin-top: 1rem;
+  padding: 20px;
+  background-color: darkorange;
+  color: lightgrey;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+@media (max-width: 600px) {
+  .board {
+    top: 2rem;
+  }
+  
+  .game-over{
+    margin-top: 5rem;
+  }
+  
+  .reset-button{
+    margin-top: 2rem;
+  }
+}
